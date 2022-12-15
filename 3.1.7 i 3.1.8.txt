@@ -1,0 +1,27 @@
+3.1.7
+1.SELECT * FROM pracownicy;
+2.SELECT imie, nazwisko, stanowisko FROM pracownicy;
+3.SELECT imie, nazwisko, placa AS wynagrodzenie FROM pracownicy;
+4.SELECT * FROM pracownicy ORDER BY nazwisko ASC;
+5.SELECT * FROM pracownicy ORDER BY nazwisko DESC;
+6.SELECT * FROM pracownicy ORDER BY nazwisko ASC, placa DESC;
+7.SELECT * FROM pracownicy WHERE nazwisko = 'Kowalski';
+8.SELECT * FROM pracownicy WHERE placa < 1600;
+9.SELECT * FROM pracownicy WHERE placa BETWEEN 1400 AND 1600;
+10.SELECT * FROM pracownicy WHERE id = 3 OR id = 5 OR id = 7;
+11.SELECT * FROM pracownicy WHERE id IN (3, 5, 7);
+12.SELECT * FROM pracownicy WHERE imie LIKE 'Ka%';
+13.SELECT id, imie, nazwisko FROM pracownicy WHERE pesel IS NULL;
+14.SELECT DISTINCT nazwisko FROM pracownicy;
+15.SELECT * FROM pracownicy WHERE placa > 1400 AND stanowisko != 'kierownik' AND pesel IS NOT NULL;
+3.1.8
+1.SELECT COUNT(*) FROM pracownicy;
+2.SELECT COUNT(pesel) FROM pracownicy WHERE pesel IS NOT NULL;
+3.SELECT COUNT(*) FROM pracownicy WHERE stanowisko = 'sprzedawca';
+4.SELECT COUNT(*) AS 'liczba sprzedawców' FROM pracownicy WHERE stanowisko = 'sprzedawca';
+5.SELECT AVG(placa) AS 'średnie wynagrodzenie' FROM pracownicy;
+6.SELECT MAX(placa) AS 'maksymalne wynagrodzenie' FROM pracownicy;
+7.SELECT MIN(placa) AS 'minimalne wynagrodzenie' FROM pracownicy;
+8.SELECT AVG(placa) AS 'średnie wynagrodzenie', MAX(placa) AS 'maksymalne wynagrodzenie', MIN(placa) AS 'minimalne wynagrodzenie' FROM pracownicy;
+9.SELECT AVG(placa) AS 'średnie wynagrodzenie', MAX(placa) AS 'maksymalne wynagrodzenie', MIN(placa) AS 'minimalne wynagrodzenie' FROM pracownicy WHERE stanowisko = 'sprzedawca';
+10.SELECT SUM(placa) FROM pracownicy;
