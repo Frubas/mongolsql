@@ -25,3 +25,15 @@
 8.SELECT AVG(placa) AS 'średnie wynagrodzenie', MAX(placa) AS 'maksymalne wynagrodzenie', MIN(placa) AS 'minimalne wynagrodzenie' FROM pracownicy;
 9.SELECT AVG(placa) AS 'średnie wynagrodzenie', MAX(placa) AS 'maksymalne wynagrodzenie', MIN(placa) AS 'minimalne wynagrodzenie' FROM pracownicy WHERE stanowisko = 'sprzedawca';
 10.SELECT SUM(placa) FROM pracownicy;
+3.1.9
+1.SELECT klient_imie, adres_miejscowosc FROM clients WHERE adres_miejscowosc IS NOT NULL;
+2.SELECT klient_imie, adres_miejscowosc FROM clients WHERE id IN (1,2,3,6) ORDER BY adres_miejscowosc ASC;
+3.SELECT klient_imie, adres_ulica, adres_miejscowosc FROM clients WHERE adres_miejscowosc = 'Warszawa';
+4.SELECT klient_imie, adres_miejscowosc FROM clients WHERE adres_typ = 1 ORDER BY klient_imie ASC;
+5.ROZWIĄZANIE 1: SELECT adres_ulica FROM clients WHERE klient_imie IS NULL; 
+ROZWIĄZANIE 2: SELECT adres_ulica FROM addresses WHERE klient_id IS NULL;
+6.ROZWIĄZANIE 1: SELECT klient_imie FROM clients WHERE adres_ulica IS NULL; 
+ROZWIĄZANIE 2: SELECT klient_imie FROM addresses WHERE adres_id IS NULL;
+7.SELECT CONCAT(klient_imie, ' ', adres_miejscowosc) FROM clients;
+8.SELECT klient_imie, adres_miejscowosc FROM clients;
+9.SELECT klient_imie, adres_miejscowosc FROM clients WHERE klient_imie LIKE 'A%' OR klient_imie LIKE 'M%';
